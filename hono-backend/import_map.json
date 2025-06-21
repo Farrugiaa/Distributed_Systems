@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "hono": "https://deno.land/x/hono@v3.11.4/mod.ts",
+    "csv": "https://deno.land/x/csv@v0.9.0/mod.ts"
+  }
+}
