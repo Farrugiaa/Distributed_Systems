@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hono-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hono-backend
+  template:
+    metadata:
+      labels:
+        app: hono-backend
+    spec:
+      containers:
+        - name: hono-backend
+          image: hono-backend:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DATABASE_URL
+              value: postgres://postgres:password@postgres-service:5432/hselabs
